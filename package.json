@@ -19,7 +19,11 @@
   },
   "cds": {
     "requires": {
-      "db": "hana-cloud"
+      "db": "hana-cloud",
+      "HAHA_edmx": {
+        "kind": "odata-v2",
+        "model": "srv/external/HAHA.edmx"
+      }
     }
   }
 }
