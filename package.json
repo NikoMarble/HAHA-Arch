@@ -9,9 +9,12 @@
     "@sap/cds": "^6",
     "@sap/cds-odata-v2-adapter-proxy": "^1.9.21",
     "express": "^4",
-    "hdb": "^0.19.0"
+    "hdb": "^0.19.0",
+    "@sap/xssec": "^3",
+    "passport": "^0"
   },
   "devDependencies": {
+    "@sap/cds-dk": "^7",
     "sqlite3": "^5"
   },
   "scripts": {
@@ -20,10 +23,17 @@
   "cds": {
     "requires": {
       "db": "hana-cloud",
-      "HAHA_edmx": {
+      "HAHA": {
         "kind": "odata-v2",
-        "model": "srv/external/HAHA.edmx"
-      }
+        "model": "srv/external/HAHA.edmx",
+        "service": "ZUI_MHP_TRAVEL_V2",
+        "credentials": {
+          "destination": "x21-haha"
+        }
+      },
+      "connectivity": true,
+      "auth": "xsuaa",
+      "destinations": true
     }
   }
 }

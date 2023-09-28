@@ -5,6 +5,6 @@ service travelService {
 
     @readonly
     entity ZC_MHP_TRAVEL as projection on external.ZC_MHP_TRAVEL {
-        key TravelId, BeginDate, CreatedAt, CreatedBy, EndDate, LastChangedAt, LastChangedBy, y_carbon, y_km, y_treason
+        key TravelId, BeginDate, CreatedAt, CreatedBy, EndDate, LastChangedAt, LastChangedBy, y_carbon, y_km, y_treason, z_vehicleid 
     }
 };

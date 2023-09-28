@@ -23,6 +23,9 @@ modules:
           srv-url: ${default-url}
     requires:
       - name: HAHA-db
+      - name: HAHA-Arch-connectivity
+      - name: HAHA-Arch-auth
+      - name: HAHA-Arch-destination
 
   - name: HAHA-db-deployer
     type: hdb
@@ -38,3 +41,22 @@ resources:
     parameters:
       service: hana
       service-plan: hdi-shared
+  - name: HAHA-Arch-connectivity
+    type: org.cloudfoundry.managed-service
+    parameters:
+      service: connectivity
+      service-plan: lite
+  - name: HAHA-Arch-auth
+    type: org.cloudfoundry.managed-service
+    parameters:
+      service: xsuaa
+      service-plan: application
+      path: ./xs-security.json
+      config:
+        xsappname: HAHA-Arch-${org}-${space}
+        tenant-mode: dedicated
+  - name: HAHA-Arch-destination
+    type: org.cloudfoundry.managed-service
+    parameters:
+      service: destination
+      service-plan: lite

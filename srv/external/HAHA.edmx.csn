@@ -22,7 +22,7 @@
      "key": true,
      "type": "cds.UUID",
      "@sap.label": "UUID",
-     "@sap.quickinfo": "16 Byte UUID in 16 Bytes (Raw Format)",
+     "@sap.quickinfo": "16 byte UUID in 16 bytes (raw format)",
      "@sap.creatable": "false",
      "@sap.updatable": "false",
      "notNull": true
@@ -31,27 +31,28 @@
      "type": "cds.String",
      "length": 12,
      "@sap.display.format": "UpperCase",
-     "@sap.label": "Created By User",
+     "@sap.label": "Angelegt von Benutz.",
+     "@sap.quickinfo": "Angelegt von Benutzer",
      "@sap.creatable": "false",
      "@sap.updatable": "false"
     },
     "BeginDate": {
      "type": "cds.Date",
      "@sap.display.format": "Date",
-     "@sap.label": "Start date",
-     "@sap.quickinfo": "Start date of staffing period"
+     "@sap.label": "Beginndatum",
+     "@sap.quickinfo": "Beginndatum des Besetzungszeitraumes"
     },
     "EndDate": {
      "type": "cds.Date",
      "@sap.display.format": "Date",
-     "@sap.label": "Validity",
-     "@sap.quickinfo": "End date of validity period"
+     "@sap.label": "Gültigkeit",
+     "@sap.quickinfo": "Endedatum der Gültigkeit"
     },
     "CreatedAt": {
      "type": "cds.Timestamp",
      "@odata.Type": "Edm.DateTimeOffset",
      "@odata.Precision": 7,
-     "@sap.label": "Creation Date Time",
+     "@sap.label": "Anlegedatum/-uhrzeit",
      "@sap.creatable": "false",
      "@sap.updatable": "false"
     },
@@ -59,7 +60,8 @@
      "type": "cds.String",
      "length": 12,
      "@sap.display.format": "UpperCase",
-     "@sap.label": "Last Changed By User",
+     "@sap.label": "Zuletzt geändert von",
+     "@sap.quickinfo": "Zuletzt geändert von Benutzer",
      "@sap.creatable": "false",
      "@sap.updatable": "false"
     },
@@ -67,8 +69,8 @@
      "type": "cds.Timestamp",
      "@odata.Type": "Edm.DateTimeOffset",
      "@odata.Precision": 7,
-     "@sap.label": "Last Changed",
-     "@sap.quickinfo": "Last Change Date Time",
+     "@sap.label": "Zuletzt geändert",
+     "@sap.quickinfo": "Datum und Uhrzeit der letzten Änderung",
      "@sap.creatable": "false",
      "@sap.updatable": "false"
     },
@@ -88,6 +90,11 @@
      "@sap.display.format": "UpperCase",
      "@sap.label": "Travel Purpose",
      "@sap.heading": ""
+    },
+    "z_vehicleid": {
+     "type": "cds.Integer",
+     "@odata.Type": "Edm.Byte",
+     "@sap.label": "Vehicle ID"
     }
    }
   }
