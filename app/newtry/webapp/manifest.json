@@ -1,0 +1,137 @@
+{
+  "_version": "1.58.0",
+  "sap.app": {
+    "id": "newtry",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap/generator-fiori:lrop",
+      "version": "1.11.2",
+      "toolsId": "8107b08b-f147-499b-a694-472452087b3b"
+    },
+    "dataSources": {
+      "mainService": {
+        "uri": "/zui-mhp-travel-v2-sample/",
+        "type": "OData",
+        "settings": {
+          "annotations": [],
+          "localUri": "localService/metadata.xml",
+          "odataVersion": "2.0"
+        }
+      }
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": true,
+    "dependencies": {
+      "minUI5Version": "1.119.1",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {},
+        "sap.ushell": {},
+        "sap.fe.templates": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "newtry.i18n.i18n"
+        }
+      },
+      "": {
+        "dataSource": "mainService",
+        "preload": true,
+        "settings": {
+          "synchronizationMode": "None",
+          "operationMode": "Server",
+          "autoExpandSelect": true,
+          "earlyRequests": true
+        }
+      },
+      "@i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "uri": "i18n/i18n.properties"
+      }
+    },
+    "resources": {
+      "css": []
+    },
+    "routing": {
+      "config": {},
+      "routes": [
+        {
+          "pattern": ":?query:",
+          "name": "ZC_MHP_TRAVELList",
+          "target": "ZC_MHP_TRAVELList"
+        },
+        {
+          "pattern": "ZC_MHP_TRAVEL({key}):?query:",
+          "name": "ZC_MHP_TRAVELObjectPage",
+          "target": "ZC_MHP_TRAVELObjectPage"
+        }
+      ],
+      "targets": {
+        "ZC_MHP_TRAVELList": {
+          "type": "Component",
+          "id": "ZC_MHP_TRAVELList",
+          "name": "sap.fe.templates.ListReport",
+          "options": {
+            "settings": {
+              "contextPath": "/ZC_MHP_TRAVEL",
+              "variantManagement": "Page",
+              "navigation": {
+                "ZC_MHP_TRAVEL": {
+                  "detail": {
+                    "route": "ZC_MHP_TRAVELObjectPage"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "ZC_MHP_TRAVELObjectPage": {
+          "type": "Component",
+          "id": "ZC_MHP_TRAVELObjectPage",
+          "name": "sap.fe.templates.ObjectPage",
+          "options": {
+            "settings": {
+              "editableHeaderContent": false,
+              "contextPath": "/ZC_MHP_TRAVEL"
+            }
+          }
+        }
+      }
+    }
+  },
+  "sap.fiori": {
+    "registrationIds": [],
+    "archeType": "transactional"
+  }
+}

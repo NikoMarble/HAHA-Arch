@@ -1,39 +1,70 @@
 {
-  "name": "HAHA-Arch",
-  "version": "1.0.0",
-  "description": "A simple CAP project.",
-  "repository": "<Add your repository here>",
-  "license": "UNLICENSED",
-  "private": true,
-  "dependencies": {
-    "@sap/cds": "^6",
-    "@sap/cds-odata-v2-adapter-proxy": "^1.9.21",
-    "express": "^4",
-    "hdb": "^0.19.0",
-    "@sap/xssec": "^3",
-    "passport": "^0"
-  },
-  "devDependencies": {
-    "@sap/cds-dk": "^7",
-    "sqlite3": "^5"
-  },
-  "scripts": {
-    "start": "cds-serve"
-  },
-  "cds": {
-    "requires": {
-      "db": "hana-cloud",
-      "HAHA": {
-        "kind": "odata-v2",
-        "model": "srv/external/HAHA.edmx",
-        "service": "ZUI_MHP_TRAVEL_V2",
-        "credentials": {
-          "destination": "x21-haha"
+    "name": "HAHA-Arch",
+    "version": "1.0.0",
+    "description": "A simple CAP project.",
+    "repository": "<Add your repository here>",
+    "license": "UNLICENSED",
+    "private": true,
+    "dependencies": {
+        "@sap-cloud-sdk/core": "^1.54.2",
+        "@sap-cloud-sdk/http-client": "^3.6.0",
+        "@sap/cds": "^6",
+        "@sap/cds-odata-v2-adapter-proxy": "^1.9.21",
+        "@sap/xssec": "^3",
+        "express": "^4",
+        "hdb": "^0.19.0",
+        "passport": "^0"
+    },
+    "devDependencies": {
+        "@sap/cds-dk": "^7.3.0",
+        "@sap/eslint-plugin-ui5-jsdocs": "^2.0.5",
+        "@sap/ux-specification": "^1.108.16",
+        "@sapui5/ts-types": "^1.92.2",
+        "eslint": "^7.32.0",
+        "rimraf": "^3.0.2",
+        "sqlite3": "^5"
+    },
+    "scripts": {
+        "start": "cds-serve",
+        "start:hybrid": "cds watch --profile hybrid",
+        "watch-uiforhaha": "cds watch --open uiforhaha/webapp/index.html?sap-ui-xx-viewCache=false",
+        "undeploy": "cf undeploy HAHA --delete-services --delete-service-keys --delete-service-brokers",
+        "build": "rimraf resources mta_archives && mbt build --mtar archive",
+        "deploy": "cf deploy mta_archives/archive.mtar --retries 1",
+        "watch-project1": "cds watch --open project1/webapp/index.html?sap-ui-xx-viewCache=false",
+        "watch-project2": "cds watch --open project2/webapp/index.html?sap-ui-xx-viewCache=false",
+        "watch-haha_withoutdest": "cds watch --open haha_withoutdest/webapp/index.html?sap-ui-xx-viewCache=false",
+        "watch-newtry": "cds watch --open newtry/webapp/index.html?sap-ui-xx-viewCache=false"
+    },
+    "cds": {
+        "requires": {
+            "connectivity": true,
+            "auth": "xsuaa",
+            "destinations": true,
+            "ZUI_MHP_TRAVEL_V2": {
+                "kind": "odata-v2",
+                "model": "srv/external/ZUI_MHP_TRAVEL_V2",
+                "credentials": {
+                    "destination": "HAHA-Dest",
+                    "path": "/sap/opu/odata/sap/ZUI_MHP_TRAVEL_V2"
+                }
+            },
+            "ZUI_MHP_TRAVEL_V2_UI": {
+                "kind": "odata-v2",
+                "model": "srv/external/ZUI_MHP_TRAVEL_V2_UI",
+                "[production]": {
+                    "credentials": {
+                        "destination": "X21-HAHA",
+                        "path": "/sap/opu/odata/sap/ZUI_MHP_TRAVEL_V2_UI"
+                    }
+                }
+            }
         }
-      },
-      "connectivity": true,
-      "auth": "xsuaa",
-      "destinations": true
-    }
-  }
+    },
+    "sapux": [
+        "app/uiforhaha",
+        "app/project2",
+        "app/haha_withoutdest",
+        "app/newtry"
+    ]
 }

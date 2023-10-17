@@ -1,3 +1,4 @@
+/*
 namespace my.bookshop;
 
 entity Books {
@@ -5,3 +6,4 @@ entity Books {
   title  : String;
   stock  : Integer;
 }
+*/
