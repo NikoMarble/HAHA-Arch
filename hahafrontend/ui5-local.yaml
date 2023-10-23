@@ -46,4 +46,4 @@ server:
       afterMiddleware: fiori-tools-appreload
       configuration:
         component: ui5
-        ui5Theme: sap_horizon
+        ui5Theme: sap_horizon 
