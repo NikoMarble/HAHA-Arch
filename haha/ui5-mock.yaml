@@ -1,13 +1,15 @@
+# yaml-language-server: $schema=https://sap.github.io/ui5-tooling/schema/ui5.yaml.json
+
 specVersion: "3.1"
 metadata:
-  name: ui5
+  name: haha
 type: application
 server:
   customMiddleware:
     - name: fiori-tools-proxy
       afterMiddleware: compression
       configuration:
-        ignoreCertError: false
+        ignoreCertError: false # If set to true, certificate errors will be ignored. E.g. self-signed certificates will be accepted
         ui5:
           path:
             - /resources
@@ -16,8 +18,8 @@ server:
         backend:
           - path: /sap
             url: http://abapserver.x21:44300
+            client: '100'
             destination: X21-HAHA
-            client: "100"
     - name: fiori-tools-appreload
       afterMiddleware: compression
       configuration:
@@ -34,12 +36,3 @@ server:
             mockdataPath: ./webapp/localService/data
             generateMockData: true
         annotations: []
-        service:
-          - urlPath: /sap/opu/odata/sap/ZUI_MHP_TRAVEL_V2_UI
-            generateMockData: true
-            metadataXmlPath: ./webapp/localService/metadata.xml
-            mockdataRootPath: ./webapp/localService/data
-          - urlPath: /sap/opu/odata/sap/ZUI_MHP_TRAVEL_V2_UI/
-            metadataXmlPath: ./webapp/localService/metadata.xml
-            mockdataRootPath: ./webapp/localService/mockdata
-            generateMockData: true

@@ -2,11 +2,11 @@
 
 specVersion: "3.1"
 metadata:
-  name: ui5
+  name: haha
 type: application
 framework:
   name: SAPUI5
-  version: 1.119.1
+  version: 1.119.2
   libraries:
     - name: sap.m
     - name: sap.ui.core
@@ -31,8 +31,8 @@ server:
         backend:
           - path: /sap
             url: http://abapserver.x21:44300
-            destination: X21-HAHA
             client: '100'
+            destination: X21-HAHA
     - name: sap-fe-mockserver
       beforeMiddleware: csp
       configuration:
@@ -46,5 +46,5 @@ server:
     - name: fiori-tools-preview
       afterMiddleware: fiori-tools-appreload
       configuration:
-        component: ui5
+        component: haha
         ui5Theme: sap_horizon

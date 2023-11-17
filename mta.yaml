@@ -60,6 +60,10 @@ modules:
       - ui5.zip
       name: ui5
       target-path: resources/
+    - artifacts:
+      - haha.zip
+      name: haha
+      target-path: resources/
 - name: uiforhaha
   type: html5
   path: app/uiforhaha
@@ -113,6 +117,16 @@ modules:
 - name: ui5
   type: html5
   path: ui5
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
+- name: haha
+  type: html5
+  path: haha
   build-parameters:
     build-result: dist
     builder: custom

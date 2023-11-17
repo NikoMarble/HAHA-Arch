@@ -2,7 +2,7 @@
 
 specVersion: "3.1"
 metadata:
-  name: ui5
+  name: haha
 type: application
 server:
   customMiddleware:
@@ -18,8 +18,8 @@ server:
         backend:
           - path: /sap
             url: http://abapserver.x21:44300
-            destination: X21-HAHA
             client: '100'
+            destination: X21-HAHA
     - name: fiori-tools-appreload
       afterMiddleware: compression
       configuration:
@@ -29,5 +29,5 @@ server:
     - name: fiori-tools-preview
       afterMiddleware: fiori-tools-appreload
       configuration:
-        component: ui5
+        component: haha
         ui5Theme: sap_horizon
