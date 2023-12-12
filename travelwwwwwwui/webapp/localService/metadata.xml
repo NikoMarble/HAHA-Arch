@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0"
+xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata"
+xmlns:sap="http://www.sap.com/Protocols/SAPData">
+<edmx:Reference Uri="https://itsapl0411.mymhp.net:44300/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_AGGREGATION',Version='0001',SAP__Origin='')/$value"
+xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+<edmx:Include Namespace="Org.OData.Aggregation.V1" Alias="Aggregation"/>
+</edmx:Reference>
+<edmx:Reference Uri="https://itsapl0411.mymhp.net:44300/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_ANALYTICS',Version='0001',SAP__Origin='')/$value"
+xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+<edmx:Include Namespace="com.sap.vocabularies.Analytics.v1" Alias="Analytics"/>
+</edmx:Reference>
+<edmx:Reference Uri="https://itsapl0411.mymhp.net:44300/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CAPABILITIES',Version='0001',SAP__Origin='')/$value"
+xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+<edmx:Include Namespace="Org.OData.Capabilities.V1" Alias="Capabilities"/>
+<edmx:Include Namespace="Org.OData.Capabilities.V1"/>
+</edmx:Reference>
+<edmx:Reference Uri="https://itsapl0411.mymhp.net:44300/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CODELIST',Version='0001',SAP__Origin='')/$value"
+xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+<edmx:Include Namespace="com.sap.vocabularies.CodeList.v1" Alias="SAP__CodeList"/>
+<edmx:Include Namespace="com.sap.vocabularies.CodeList.v1" Alias="CodeList"/>
+</edmx:Reference>
+<edmx:Reference Uri="https://itsapl0411.mymhp.net:44300/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='')/$value"
+xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+<edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/>
+<edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="SAP__common"/>
+</edmx:Reference>
+<edmx:Reference Uri="https://itsapl0411.mymhp.net:44300/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='')/$value"
+xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+<edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/>
+</edmx:Reference>
+<edmx:Reference Uri="https://itsapl0411.mymhp.net:44300/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CORE',Version='0001',SAP__Origin='')/$value"
+xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+<edmx:Include Namespace="Org.OData.Core.V1" Alias="SAP__core"/>
+</edmx:Reference>
+<edmx:Reference Uri="https://itsapl0411.mymhp.net:44300/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_MEASURES',Version='0001',SAP__Origin='')/$value"
+xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+<edmx:Include Namespace="Org.OData.Measures.V1" Alias="Measures"/>
+</edmx:Reference>
+<edmx:Reference Uri="https://itsapl0411.mymhp.net:44300/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PERSONALDATA',Version='0001',SAP__Origin='')/$value"
+xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+<edmx:Include Namespace="com.sap.vocabularies.PersonalData.v1" Alias="PersonalData"/>
+</edmx:Reference>
+<edmx:Reference Uri="https://itsapl0411.mymhp.net:44300/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_UI',Version='0001',SAP__Origin='')/$value"
+xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+<edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="UI"/>
+</edmx:Reference>
+<edmx:Reference Uri="https://itsapl0411.mymhp.net:44300/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_VALIDATION',Version='0001',SAP__Origin='')/$value"
+xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+<edmx:Include Namespace="Org.OData.Validation.V1" Alias="Validation"/>
+</edmx:Reference>
+<edmx:DataServices m:DataServiceVersion="2.0">
+    <Schema Namespace="cds_zui_mhp_travel" xml:lang="en" sap:schema-version="1"
+    xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+    <Annotation Term="Core.SchemaVersion" String="1.0.0"
+    xmlns="http://docs.oasis-open.org/odata/ns/edm"/>
+    <EntityType Name="ZC_MHP_TRAVELType" sap:label="Consumption: Travel" sap:content-version="1">
+        <Key>
+            <PropertyRef Name="TravelId"/>
+        </Key>
+        <Property Name="Delete_mc" Type="Edm.Boolean" sap:label="Dyn. Method Control" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+        <Property Name="Update_mc" Type="Edm.Boolean" sap:label="Dyn. Method Control" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+        <Property Name="TravelId" Type="Edm.Guid" Nullable="false" sap:label="UUID" sap:quickinfo="16 Byte UUID in 16 Bytes (Raw Format)" sap:creatable="false" sap:updatable="false"/>
+        <Property Name="CreatedBy" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:label="Created By User" sap:creatable="false" sap:updatable="false"/>
+        <Property Name="BeginDate" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Start date" sap:quickinfo="Start date of staffing period"/>
+        <Property Name="EndDate" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Validity" sap:quickinfo="End date of validity period"/>
+        <Property Name="CreatedAt" Type="Edm.DateTimeOffset" Precision="7" sap:label="Creation Date Time" sap:creatable="false" sap:updatable="false"/>
+        <Property Name="LastChangedBy" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:label="Last Changed By User" sap:creatable="false" sap:updatable="false"/>
+        <Property Name="LastChangedAt" Type="Edm.DateTimeOffset" Precision="7" sap:label="Last Changed" sap:quickinfo="Last Change Date Time" sap:creatable="false" sap:updatable="false"/>
+        <Property Name="y_km" Type="Edm.Int16" sap:label="Traveled Distance" sap:quickinfo="traveled kilometers"/>
+        <Property Name="y_carbon" Type="Edm.Int32" sap:label="Carbon Dioxid Consumption" sap:heading=""/>
+        <Property Name="y_treason" Type="Edm.String" MaxLength="256" sap:display-format="UpperCase" sap:label="Travel Purpose" sap:heading=""/>
+        <Property Name="z_vehicleid" Type="Edm.Byte" sap:label="Vehicle ID"/>
+    </EntityType>
+    <EntityType Name="SAP__Currency" sap:content-version="1">
+        <Key>
+            <PropertyRef Name="CurrencyCode"/>
+        </Key>
+        <Property Name="CurrencyCode" Type="Edm.String" Nullable="false" MaxLength="5" sap:label="Currency" sap:semantics="currency-code"/>
+        <Property Name="ISOCode" Type="Edm.String" Nullable="false" MaxLength="3" sap:label="ISO code"/>
+        <Property Name="Text" Type="Edm.String" Nullable="false" MaxLength="15" sap:label="Short text"/>
+        <Property Name="DecimalPlaces" Type="Edm.Byte" Nullable="false" sap:label="Decimals"/>
+    </EntityType>
+    <EntityType Name="SAP__UnitOfMeasure" sap:content-version="1">
+        <Key>
+            <PropertyRef Name="UnitCode"/>
+        </Key>
+        <Property Name="UnitCode" Type="Edm.String" Nullable="false" MaxLength="3" sap:label="Internal UoM" sap:semantics="unit-of-measure"/>
+        <Property Name="ISOCode" Type="Edm.String" Nullable="false" MaxLength="3" sap:label="ISO code"/>
+        <Property Name="ExternalCode" Type="Edm.String" Nullable="false" MaxLength="3" sap:label="Commercial"/>
+        <Property Name="Text" Type="Edm.String" Nullable="false" MaxLength="30" sap:label="UoM Text"/>
+        <Property Name="DecimalPlaces" Type="Edm.Int16" sap:label="Decimal Places"/>
+    </EntityType>
+    <EntityContainer Name="cds_zui_mhp_travel_Entities" m:IsDefaultEntityContainer="true" sap:message-scope-supported="true" sap:supported-formats="atom json xlsx">
+        <EntitySet Name="ZC_MHP_TRAVEL" EntityType="cds_zui_mhp_travel.ZC_MHP_TRAVELType" sap:content-version="1" sap:deletable-path="Delete_mc" sap:updatable-path="Update_mc"/>
+        <EntitySet Name="SAP__Currencies" EntityType="cds_zui_mhp_travel.SAP__Currency" sap:content-version="1"/>
+        <EntitySet Name="SAP__UnitsOfMeasure" EntityType="cds_zui_mhp_travel.SAP__UnitOfMeasure" sap:content-version="1"/>
+    </EntityContainer>
+    <Annotations Target="cds_zui_mhp_travel.cds_zui_mhp_travel_Entities"
+    xmlns="http://docs.oasis-open.org/odata/ns/edm">
+    <Annotation Term="Common.ApplyMultiUnitBehaviorForSortingAndFiltering" Bool="true"/>
+</Annotations>
+<Annotations Target="cds_zui_mhp_travel.cds_zui_mhp_travel_Entities/ZC_MHP_TRAVEL"
+xmlns="http://docs.oasis-open.org/odata/ns/edm">
+<Annotation Term="Capabilities.FilterRestrictions">
+    <Record>
+        <PropertyValue Property="NonFilterableProperties">
+            <Collection>
+                <PropertyPath>Delete_mc</PropertyPath>
+                <PropertyPath>Update_mc</PropertyPath>
+            </Collection>
+        </PropertyValue>
+        <PropertyValue Property="FilterExpressionRestrictions">
+            <Collection>
+                <Record>
+                    <PropertyValue Property="Property" PropertyPath="y_treason"/>
+                    <PropertyValue Property="AllowedExpressions" String="SearchExpression"/>
+                </Record>
+            </Collection>
+        </PropertyValue>
+    </Record>
+</Annotation>
+<Annotation Term="Capabilities.SortRestrictions">
+    <Record>
+        <PropertyValue Property="NonSortableProperties">
+            <Collection>
+                <PropertyPath>Delete_mc</PropertyPath>
+                <PropertyPath>Update_mc</PropertyPath>
+                <PropertyPath>y_treason</PropertyPath>
+            </Collection>
+        </PropertyValue>
+    </Record>
+</Annotation>
+</Annotations>
+<Annotations Target="cds_zui_mhp_travel.cds_zui_mhp_travel_Entities"
+xmlns="http://docs.oasis-open.org/odata/ns/edm">
+<Annotation Term="Org.OData.Capabilities.V1.BatchSupport">
+    <Record Type="Org.OData.Capabilities.V1.BatchSupportType">
+        <PropertyValue Property="ReferencesAcrossChangeSetsSupported" Bool="true"/>
+    </Record>
+</Annotation>
+<Annotation Term="SAP__CodeList.CurrencyCodes">
+    <Record>
+        <PropertyValue Property="Url" String="./$metadata"/>
+        <PropertyValue Property="CollectionPath" String="SAP__Currencies"/>
+    </Record>
+</Annotation>
+<Annotation Term="SAP__CodeList.UnitsOfMeasure">
+    <Record>
+        <PropertyValue Property="Url" String="./$metadata"/>
+        <PropertyValue Property="CollectionPath" String="SAP__UnitsOfMeasure"/>
+    </Record>
+</Annotation>
+</Annotations>
+<Annotations Target="cds_zui_mhp_travel.SAP__Currency/CurrencyCode"
+xmlns="http://docs.oasis-open.org/odata/ns/edm">
+<Annotation Term="SAP__common.Text" Path="Text"/>
+<Annotation Term="SAP__common.UnitSpecificScale" Path="DecimalPlaces"/>
+<Annotation Term="SAP__CodeList.StandardCode" Path="ISOCode"/>
+</Annotations>
+<Annotations Target="cds_zui_mhp_travel.SAP__UnitOfMeasure/UnitCode"
+xmlns="http://docs.oasis-open.org/odata/ns/edm">
+<Annotation Term="SAP__common.Text" Path="Text"/>
+<Annotation Term="SAP__common.UnitSpecificScale" Path="DecimalPlaces"/>
+<Annotation Term="SAP__CodeList.StandardCode" Path="ISOCode"/>
+<Annotation Term="SAP__CodeList.ExternalCode" Path="ExternalCode"/>
+</Annotations>
+<Annotations Target="cds_zui_mhp_travel.SAP__UnitOfMeasure"
+xmlns="http://docs.oasis-open.org/odata/ns/edm">
+<Annotation Term="SAP__core.AlternateKeys">
+    <Collection>
+        <Record>
+            <PropertyValue Property="Key">
+                <Collection>
+                    <Record>
+                        <PropertyValue Property="Name" Path="ExternalCode"/>
+                        <PropertyValue Property="Alias" String="ExternalCode"/>
+                    </Record>
+                </Collection>
+            </PropertyValue>
+        </Record>
+    </Collection>
+</Annotation>
+</Annotations>
+<atom:link rel="self" href="https://itsapl0411.mymhp.net:44300/sap/opu/odata/sap/ZUI_MHP_TRAVEL_V2_UI/$metadata"
+xmlns:atom="http://www.w3.org/2005/Atom"/>
+<atom:link rel="latest-version" href="https://itsapl0411.mymhp.net:44300/sap/opu/odata/sap/ZUI_MHP_TRAVEL_V2_UI/$metadata"
+xmlns:atom="http://www.w3.org/2005/Atom"/>
+</Schema>
+</edmx:DataServices>
+</edmx:Edmx>

@@ -64,6 +64,18 @@ modules:
       - haha.zip
       name: haha
       target-path: resources/
+    - artifacts:
+      - travelwoui.zip
+      name: travelwoui
+      target-path: resources/
+    - artifacts:
+      - travelwwwwwwui.zip
+      name: travelwwwwwwui
+      target-path: resources/
+    - artifacts:
+      - mhptravel.zip
+      name: mhptravel
+      target-path: resources/
 - name: uiforhaha
   type: html5
   path: app/uiforhaha
@@ -127,6 +139,36 @@ modules:
 - name: haha
   type: html5
   path: haha
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
+- name: travelwoui
+  type: html5
+  path: travelwoui
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
+- name: travelwwwwwwui
+  type: html5
+  path: travelwwwwwwui
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
+- name: mhptravel
+  type: html5
+  path: mhptravel
   build-parameters:
     build-result: dist
     builder: custom
